@@ -6,6 +6,7 @@ import Header from './components/Header'
 import AddExpense from './pages/AddExpense'
 import { Toaster } from 'react-hot-toast'
 import EditExpense from './pages/EditExpense'
+import About from './components/About'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/manage-expense" element={<ManageExpense />} />
           <Route path="/add-expense" element={<AddExpense />} />
           <Route path="/edit-expense/:id" element={<EditExpense />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>

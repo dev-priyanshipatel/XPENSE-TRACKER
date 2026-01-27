@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditExpense = () => {
@@ -40,6 +41,7 @@ const EditExpense = () => {
           return expense;
         });
         localStorage.setItem("expense", JSON.stringify(updatedExpense));
+        toast.success("Expense Updated successfully....");
         navigate("/manage-expense");
 
     }
