@@ -2,9 +2,9 @@ import React from "react";
 
 const MainBanner = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 h-screen flex items-center">
-      <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div className="mr-auto place-self-center lg:col-span-7">
+    <section className="bg-white dark:bg-gray-900 min-h-screen py-20">
+      <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 gap-y-5    ">
+        <div className="mr-auto place-self-center col-span-7">
           <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl dark:text-white">
             Track Your Payment Expenses Effortlessly With Xpense Tracker
           </h1>
@@ -36,7 +36,7 @@ const MainBanner = () => {
             View Demo
           </a>
         </div>
-        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <div className=" lg:mt-0 col-span-5 flex">
           <img
             src="/images/banner.png"
             alt="img"
