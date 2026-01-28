@@ -12,7 +12,7 @@ import About from './components/About'
 const App = () => {
   return (
     <div>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <BrowserRouter>
         <Header />
         <Routes>

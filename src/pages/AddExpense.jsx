@@ -23,6 +23,7 @@ const AddExpense = () => {
         new window.Datepicker(el, {
           autohide: true,
           format: "dd/mm/yyyy",
+          maxDate: new Date(),
         });
 
         el.addEventListener("changeDate", (e) => {
@@ -43,8 +44,61 @@ const AddExpense = () => {
 
   const navigate = useNavigate();
 
+  const isFutureDate = (dateStr) => {
+    const [day, month, year] = dateStr.split("/").map(Number);
+    const selectedDate = new Date(year, month - 1, day);
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return selectedDate > today;
+  };
+
+  const validateForm = () => {
+    if (!input.title.trim()) {
+      toast.error("Please enter expense title");
+      return false;
+    }
+
+    if (!input.amount || Number(input.amount) <= 0) {
+      toast.error("Please enter a valid amount");
+      return false;
+    }
+
+    if (!input.category || input.category === "Select a category") {
+      toast.error("Please select a category");
+      return false;
+    }
+
+    if (!input.date) {
+      toast.error("Please select a date");
+      return false;
+    }
+
+    if (isFutureDate(input.date)) {
+      toast.error("Future dates are not allowed");
+      return false;
+    }
+
+    if (!input.paymentmethod || input.paymentmethod === "Select Payment Method") {
+      toast.error("Please select a payment method");
+      return false;
+    }
+
+    if(!input.note.trim()){
+      toast.error("Please enter a note");
+      return false;
+    }
+
+    return true;
+  };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return; 
+
       const newExpense = {
         id:Date.now(),
         ...input
@@ -122,7 +176,7 @@ const AddExpense = () => {
                 value={input.category}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option selected>Select a category</option>
+                <option value="" >Select a category</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>
                 <option value="rent">Rent</option>
@@ -175,7 +229,7 @@ const AddExpense = () => {
                 value={input.paymentmethod}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option selected>Select Payment Method </option>
+                <option value="">Select Payment Method </option>
                 <option value="cash">Cash</option>
                 <option value="upi">UPI</option>
                 <option value="card">Card</option>
