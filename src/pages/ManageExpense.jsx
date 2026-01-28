@@ -24,12 +24,12 @@ const ManageExpense = () => {
     <div className="bg-white dark:bg-gray-900 h-screen ">
       <div className="max-w-screen-xl mx-auto">
         <div className="pt-40">
-          <div className="flex justify-between">
+          <div className="flex justify-between p-4">
             <h3 className="text-4xl text-white  font-semibold">
               Your Expenses
             </h3>
           </div>
-          <div className="pt-5 relative overflow-x-auto overflow-hidden shadow-md sm:rounded-lg">
+          <div className="pt-5 relative overflow-x-auto overflow-hidden shadow-md sm:rounded-lg p-4">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>

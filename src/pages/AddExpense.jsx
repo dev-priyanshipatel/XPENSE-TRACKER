@@ -118,15 +118,15 @@ const AddExpense = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen flex items-center justify-center ">
-      <div className="max-w-screen-xl mx-auto py-20">
-        <div className="mb-10">
-          <h3 className="text-white text-center text-4xl font-semibold">
-            Add Expense
-          </h3>
-        </div>
-        <div className="max-w-lg bg-gray-800 p-7 rounded-lg ">
-          <form className="w-96 mx-auto">
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
+      <div className="pt-20">
+        <h3 className="text-white text-center font-semibold text-2xl sm:text-3xl md:text-4xl">
+          Add Expense
+        </h3>
+      </div>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex justify-center">
+        <div className="w-full max-w-md bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg">
+          <form className="w-full mx-auto">
             <div className="mb-5">
               <label
                 htmlFor="title"
@@ -176,7 +176,7 @@ const AddExpense = () => {
                 value={input.category}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option value="" >Select a category</option>
+                <option value="">Select a category</option>
                 <option value="food">Food</option>
                 <option value="travel">Travel</option>
                 <option value="rent">Rent</option>
